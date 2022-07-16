@@ -1,0 +1,21 @@
+let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
+let text = `*Walaikumsalam *
+`
+const templateButtons = [
+    {index: 2, urlButton: {displayText: '🌎 Official Group', url: sgc}},
+    {index: 3, quickReplyButton: {displayText: 'Menu', id: '.menu'}},
+    {index: 4, quickReplyButton: {displayText: 'Donasi', id: '.donasi'}},
+]
+let tm = {
+text: text,
+footer: global.wm,
+templateButtons: templateButtons,
+image: thumb
+}
+conn.sendMessage(m.chat, tm, m)
+}
+handler.help = ['asalammualaikum']
+handler.tags = ['info']
+handler.command = /^(r(eply))$/i
+
+export default handler
